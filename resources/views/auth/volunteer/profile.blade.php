@@ -85,7 +85,7 @@
                             </div>
                             <div class="col-4 pt-3" id="sandbox-container">
                                 <label for="date"> Date of Birth: </label>
-                                <input type="text" class="form-control @error('date') is-invalid @enderror" id="date" name="date" value="@if(auth()->user()->dateOfBirth != null){{ auth()->user()->dateOfBirth }}@else{{ old('dateOfBirth') }}@endif" placeholder="yyyy-mm-dd" required  autocomplete="off" @if(auth()->user()->dateOfBirth != null) disabled @else readonly style="background-color: #fff" @endif onchange="changeVal(event)")>
+                                <input type="text" class="form-control @error('date') is-invalid @enderror" id="date" name="date" value="@if(auth()->user()->dateOfBirth != null){{ auth()->user()->dateOfBirth }}@else{{ old('dateOfBirth') }}@endif" placeholder="yyyy-mm-dd" required  autocomplete="off" @if(auth()->user()->dateOfBirth != null) disabled @else readonly style="background-color: #fff" @endif onchange="changeVal(event)">
                                 @error('date')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -113,50 +113,10 @@
                         </div>
                         <hr>
                         <div class="d-flex" style="justify-content: flex-end">
-                            <button class="btn btn-danger" type="button">Update Password </button> &emsp;
                             <button class="btn btn-primary" type="submit"  id="submit" @if(auth()->user()->schoolID === null)disabled @endif> Update Profile Data </button>
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="updatePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update Password</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <form action="{{ route('add_school') }}" class="needs-validation" method="POST">
-                    @csrf
-                    <div class="modal-body">
-                        <div class="col-12">
-                            <label for="password"> Password (*fill if you want to change your password): </label>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required>
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="col-12">
-                            <label for="confirmpassword"> Confirm Password: </label>
-                            <input id="confirmpassword" type="password" class="form-control @error('confirmpassword') is-invalid @enderror" name="confirmpassword" placeholder="Confirm Password" required>
-                            @error('confirmpassword')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
-                        <button class="btn btn-primary" type="submit">Add</button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>

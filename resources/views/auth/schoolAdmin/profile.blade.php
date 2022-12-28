@@ -125,7 +125,7 @@
                                                 @endif
                                             </select>
                                             <div class="input-group-append">
-                                                <button class="btn btn-primary" type="button"  data-bs-toggle="modal" data-bs-target="#addSchoolModal">
+                                                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#addSchoolModal">
                                                     <i class="fas fa-plus"></i> 
                                                 </button>
                                             </div>
@@ -150,7 +150,6 @@
                         </div>
                         <hr>
                         <div class="d-flex" style="justify-content: flex-end">
-                            <button class="btn btn-danger" type="button"> Update Password </button> &emsp;
                             <button class="btn btn-primary" type="submit"  id="submit" @if(auth()->user()->schoolID === null)disabled @endif> Update Profile Data </button>
                         </div>
                     </form>
