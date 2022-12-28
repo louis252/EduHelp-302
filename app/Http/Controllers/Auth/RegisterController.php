@@ -39,7 +39,7 @@ class RegisterController extends Controller
     {
         if (Auth::user()->role == "Administrator"){
             return '/admin_dashboard';
-        }else{
+        }elseif (Auth::user()->role == "Volunteer"){
             return '/volunteer_dashboard';
         }
     }
