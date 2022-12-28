@@ -60,15 +60,14 @@
             </div>
 
             <!-- Nav Item - View Offers Menu -->
-            <li class="nav-item">
-                <a class="nav-link @if(auth()->user()->phone === null) disabled @endif" href="#">
+            <li class="nav-item {{ ($title === "View Request List" ? 'active' : '') }}">
+                <a class="nav-link @if(auth()->user()->phone === null) disabled @endif" href="/volunteer_view_request">
                     <i class="fas fa-people-carry"></i>
                     <span>View Help Request</span></a>
             </li>
-
             <!-- Nav Item - View Offers Menu -->
-            <li class="nav-item">
-                <a class="nav-link @if(auth()->user()->phone === null) disabled @endif" href="#">
+            <li class="nav-item {{ ($title === "Offer Made History" ? 'active' : '') }}">
+                <a class="nav-link @if(auth()->user()->phone === null) disabled @endif" href="/volunteer_offer_history">
                     <i class="fas fa-history"></i>
                     <span>View Help History</span></a>
             </li>
