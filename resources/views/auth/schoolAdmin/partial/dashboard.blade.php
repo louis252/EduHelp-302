@@ -60,24 +60,24 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed @if(auth()->user()->phone === null) disabled @endif" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+            <li class="nav-item {{ ($title == "New Resource Request") || ($title == "New Tutorial Request") || ($title == "View Request History") ? 'active' : '' }}">
+                <a class="nav-link collapsed @if(auth()->user()->phone === null) disabled @endif" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-poll-h"></i>
                     <span>Manage Request</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Action List:</h6>
-                        <a class="collapse-item" href="#" style="padding-left:9px"><i class="fas fa-plus"></i><span style="margin-left: 8px">Add a New Request<span></a>
-                        <a class="collapse-item" href="#" style="padding-left:8px"><i class="fas fa-history"></i><span style="margin-left: 8px">View Request History</span></a>
+                        <a class="collapse-item {{ ($title == "New Resource Request") ? 'active' : '' }}" href="/admin_add_rrequest" style="padding-left:9px"><i class="fas fa-plus"></i><span style="margin-left: 8px">New Reso. Request<span></a>
+                        <a class="collapse-item {{ ($title == "New Tutorial Request") ? 'active' : '' }}" href="/admin_add_trequest" style="padding-left:9px"><i class="fas fa-plus"></i><span style="margin-left: 8px">New Tuto. Request<span></a>
+                        <a class="collapse-item {{ ($title == "View Request History") ? 'active' : '' }}" href="/admin_view_request" style="padding-left:8px"><i class="fas fa-history"></i><span style="margin-left: 8px">View Request History</span></a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - View Offers Menu -->
-            <li class="nav-item">
-                <a class="nav-link @if(auth()->user()->phone === null) disabled @endif" href="#">
+            <li class="nav-item {{ ($title == "View Offer List") ? 'active' : '' }}">
+                <a class="nav-link @if(auth()->user()->phone === null) disabled @endif" href="/admin_view_offer">
                     <i class="fas fa-hand-holding-heart"></i>
                     <span>View Help Offers</span></a>
             </li>
